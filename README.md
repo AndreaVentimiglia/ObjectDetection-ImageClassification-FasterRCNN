@@ -6,7 +6,6 @@ During training, the model expects both the input tensors and a targets (list of
 - boxes (FloatTensor[N, 4]): the ground-truth boxes in [x1, y1, x2, y2] format, with 0 <= x1 < x2 <= W and 0 <= y1 < y2 <= H;
 - labels (Int64Tensor[N]): the class label for each ground-truth box.
 
-So, we implement from scratch ObjectDataset class – where target is a dictionary {'boxes’ : boxes, 'labels’ :labels}.
 ![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/ab4d8cec-a0a7-4bc8-98e8-620fd454d01a)
 
 ![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/cbd3ad4a-da75-4700-b599-5cbd998d2456)
@@ -14,9 +13,13 @@ So, we implement from scratch ObjectDataset class – where target is a dictiona
 
 ## Training
 During training the model tries to achieve the objects in the images correctly thanks to the ObjectDataset which helps it to focus the learning in the indicated regions.
-![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/d235a938-3b2e-41d1-a616-ff5bad4d7074)
+To train the model we used:
+- The SGD optimizer with learning rate of 0.01
+- Dataset that was split into batches of size 16
+- 20 epochs
+- 
+![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/2ff164c2-db38-4bb4-af45-6a9ba9e69d8c)
 
-To train the model we used:
-The SGD optimizer with learning rate of 0.01
-Dataset that was split into batches of size 16
-20 epochs![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/ba727452-8b89-4dbf-87ae-3460302b66ad)
+![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/1aafbe6d-88d6-4a55-a753-dae69df18c84)
+
+
