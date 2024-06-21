@@ -7,7 +7,10 @@ During training, the model expects both the input tensors and a targets (list of
 - labels (Int64Tensor[N]): the class label for each ground-truth box.
 
 So, we implement from scratch ObjectDataset class – where target is a dictionary {'boxes’ : boxes, 'labels’ :labels}.
-![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/ec8b9a91-c0e3-472d-92ac-51059ba1ea65)
+![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/ab4d8cec-a0a7-4bc8-98e8-620fd454d01a)
+
+![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/cbd3ad4a-da75-4700-b599-5cbd998d2456)
+
 
 ## Training
 During training the model tries to achieve the objects in the images correctly thanks to the ObjectDataset which helps it to focus the learning in the indicated regions.
