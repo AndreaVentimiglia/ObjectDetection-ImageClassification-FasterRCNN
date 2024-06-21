@@ -17,9 +17,13 @@ To train the model we used:
 - The SGD optimizer with learning rate of 0.01
 - Dataset that was split into batches of size 16
 - 20 epochs
-- 
-![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/2ff164c2-db38-4bb4-af45-6a9ba9e69d8c)
 
-![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/1aafbe6d-88d6-4a55-a753-dae69df18c84)
+![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/aac855d3-2778-40d1-8b0a-c380c9bfbe44)
 
+## Test
+During inference, the model requires only the input tensors, and returns the post-processed predictions as a List[Dict[Tensor]], one for each input image. The fields of the Dict are as follows, where N is the number of detections:
+- boxes (FloatTensor[N, 4]): the predicted boxes in [x1, y1, x2, y2] format;
+- labels (Int64Tensor[N]): the predicted labels for each detection;
+- scores (Tensor[N]): the scores of each detection.
 
+![image](https://github.com/AndreaVentimiglia/ObjectDetection-ImageClassification-FasterRCNN/assets/63006903/d2115e8a-40f1-40ef-a4b2-1235126d0e9f)
